@@ -8,6 +8,9 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 # Doc:https://rubygems.org/gems/bootstrap-sass
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
+# https://rubygems.org/gems/faker
+gem 'faker', '~> 3.4', '>= 3.4.1'
+
 # Doc:https://rubygems.org/gems/sassc-rails
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 
@@ -49,6 +52,12 @@ gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
+
+# https://rubygems.org/gems/will_paginate
+gem 'will_paginate', "3.3.1"
+
+# https://rubygems.org/gems/bootstrap-will_paginate
+gem 'bootstrap-will_paginate', '~> 1.0'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
