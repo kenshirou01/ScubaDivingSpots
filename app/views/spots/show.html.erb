@@ -1,0 +1,5 @@
+<h1><%= @spot.name %></h1>
+<p>住所: <%= @spot.address %></p>
+<p>説明: <%= @spot.description %></p>
+<%= image_tag @spot.image.url if @spot.image.present? %>
+<%= link_to 'スポット一覧に戻る', prefecture_spots_path(@spot.prefecture) %>

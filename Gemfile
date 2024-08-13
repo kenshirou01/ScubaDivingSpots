@@ -11,6 +11,12 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 # https://rubygems.org/gems/faker
 gem 'faker', '~> 3.4', '>= 3.4.1'
 
+# https://github.com/minimagick/minimagick
+gem 'mini_magick'
+
+# https://rubygems.org/gems/carrierwave
+gem 'carrierwave', '~> 3.0', '>= 3.0.7'
+
 # Doc:https://rubygems.org/gems/sassc-rails
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 

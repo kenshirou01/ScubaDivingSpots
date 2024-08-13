@@ -26,14 +26,19 @@ textarea {
   resize: vertical;
 }
 
-/* home */
-.container {
-  @media (min-width: 992px) {
+@media (min-width: 992px) {
+  .container {
     width: 100%;
     max-width: none; /* Bootstrapの制約を無効にする */
     padding: 0;
   }
+
+  .navbar {
+    padding: 0 20px;
+  }
 }
+/* home */
+
 
 .center {
   text-align: center;
@@ -127,7 +132,6 @@ p {
 }
 
 /* header */
-
 #logo {
   float: left;
   margin-right: 10px;
@@ -168,6 +172,7 @@ footer {
     }
   }
 }
+
 @media (max-width: 932px) {
   footer {
     small {
