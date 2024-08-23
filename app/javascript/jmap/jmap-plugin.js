@@ -169,7 +169,7 @@
     };
 
     $.fn.jmapBlackOrWhite = function(_hexcolor) {
-        
+
         var hexcolor = _hexcolor.toLowerCase();
 
         if(hexcolor.length <= 4) {
@@ -386,7 +386,7 @@
             contentDiv.attr('jmap-skew', true);
         }
 
-        // Island divider 
+        // Island divider
         if (params.showIslandDivider) {
 
             var divider = conf.divider;
@@ -437,7 +437,7 @@
             }
         }
 
-        // Infobox 
+        // Infobox
         var infoboxDiv = null;
         if (params.showInfobox) {
 
@@ -588,7 +588,7 @@
                         text += ' ';
                         text += (heatmapMin + (inc * (index + 1))).toLocaleString() + "未満";
                     }
-                    
+
                     var span = $('<span>')
                         .text(text)
                         .data('data', { 'index' : index, 'text' : text, 'value' : value, 'range' : range, 'unit' : params.heatmapLabelUnit })
@@ -606,7 +606,7 @@
                     .append(span).appendTo(heatmapUl);
                 }
                 infoboxDiv.append(heatmapUl)
-                
+
 
             }
         }
@@ -703,9 +703,9 @@
 
                 // if Heatmap Conditions area defined
                 if(params.heatmapConditions.length > 0 && option.number) {
- 
+
                     $.each(params.heatmapConditions, function(index, _cond) {
-                        
+
                         _cond = $.isNumeric(_cond)? "==" + _cond : _cond;
 
                         if( eval(option.number + " " + _cond + "? true: false") ) {
@@ -715,7 +715,7 @@
                                 option.fontColor = $(this).jmapBlackOrWhite(option.color);
                             else
                                 option.fontColor = params.heatmapFontColors[(params.heatmapColors.length - 1) - index];
-                            
+
                             if (option.hoverColor)
                                 delete option.hoverColor;
 
@@ -872,7 +872,6 @@
                 jmapStyle.append(infoboxSkewSelector + infoboxSkewStyle + "\n");
             }
         }
-
         return this;
     };
 })(jQuery);

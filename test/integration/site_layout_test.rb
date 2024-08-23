@@ -4,9 +4,10 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:michael)
+    @prefectures = Prefecture.all
   end
 
-  test "layout links" do
+  test "layout elements on home page" do
     get root_path
     assert_template 'static_pages/home'
     assert_select "a[href=?]", root_path, count: 2
@@ -15,6 +16,15 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", contact_path
     assert_select "a[href=?]", signup_path
     assert_select "a[href=?]", login_path
+    # 都道府県のリンクが表示されていることを確認
+    assert_select ".prefecture-item", @prefectures.count
+    @prefectures.each do |prefecture|
+      assert_select "a[href=?]", prefecture_path(prefecture), text: prefecture.name
+    end
+    # 検索フォームの確認
+    assert_select "form[action=?]", search_path
+    assert_select "input[name=?]", "query"
+    assert_select "input[type=?]", "submit"
     get contact_path
     assert_select "title", full_title("Contact")
     get signup_path

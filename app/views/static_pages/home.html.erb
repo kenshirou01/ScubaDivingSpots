@@ -4,13 +4,24 @@
     <h1 class="logo-text">ScubaDivingSpots</h1>
   </section>
 
-  <section class="custom-container">
-    <h1>日本地図を表示する</h1>
+  <section id="map" class="custom-container">
+    <h1>日本地図</h1>
     <div id="jmap" data-controller="home">
       <div class="jmap-infobox">
         <h3>ダイビングポイント</h3>
         <p>地図をクリックするとダイビングスポットが表示されます。</p>
       </div>
+    </div>
+  </section>
+
+  <section class="custom-container">
+    <h1>都道府県一覧から探す</h1>
+    <div class="prefectures-container">
+      <% @prefectures.each do |prefecture| %>
+        <div class="prefecture-item">
+          <%= link_to prefecture.name, prefecture_path(prefecture), class: "prefecture-link" %>
+        </div>
+      <% end %>
     </div>
   </section>
 

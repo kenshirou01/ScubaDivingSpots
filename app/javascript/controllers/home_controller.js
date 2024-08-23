@@ -68,17 +68,14 @@ export default class extends Controller {
         {code : 47, name: "沖縄", color: "#eb98ff", hoverColor: "#f5c9ff" }
         ],
         onLoad: function(e, data) {
-            $(this).html('<strong>' + data.name + '</strong>');
+          $(this).html('<strong>' + data.name + '</strong>');
         },
         onSelect: function(e, data) {
-            $('#prefectureModal').find('#prefectureModalTitle')
-            .html(data.area8.name + " - " + data.area11.name + " - " + data.name + data.full)
-            .end().find('.modal-body')
-            .html(JSON.stringify(data, null, 4))
-            .end().modal('show');
+          // // 都道府県が選択された際にリンクページに遷移する
+          window.location.href = 'prefectures/' + data.code;
         },
         onHover: function(e, data) {
-            console.log(data);
+          console.log(data);
         }
       });
     });
