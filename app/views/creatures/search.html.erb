@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag 'views/creatures-search', 'media' => 'all', 'data-turbo-track': 'reload' %>
+
+<h1>検索結果</h1>
+
+<% if @creatures.any? %>
+  <ul>
+    <% @creatures.each do |creature| %>
+      <li>
+        <div class="creature-result-item">
+          <%= image_tag creature.photo.url(:thumb), class: 'creature-image' if creature.photo.present? %>
+
+          <div class="creature-details">
+            <%= link_to creature.name, creature_path(creature), class: 'creature-name' %>
+            <p><%= creature.description %></p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>該当する生き物が見つかりませんでした。</p>
+<% end %>
+
+<%= link_to 'Back', creatures_path %>

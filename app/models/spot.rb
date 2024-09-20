@@ -1,5 +1,7 @@
 class Spot < ApplicationRecord
   belongs_to :prefecture
+  has_and_belongs_to_many :creatures
+
   validates :name, presence: true, length: { maximum: 50 }
   validates :address, presence: true, length: { maximum: 100 }
   validates :description, presence: true, length: { maximum: 500 }

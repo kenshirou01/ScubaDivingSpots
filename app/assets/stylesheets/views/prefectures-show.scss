@@ -1,0 +1,36 @@
+.spot-image {
+  width: 100%; /* 横幅を要素いっぱいに */
+  height: auto; /* 縦横比を維持 */
+}
+
+.spot-item {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.spot-link {
+  display: block;
+  padding: 10px;
+  background-color: #d5f1f6;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.spot-link:hover {
+  background-color: #5ddde6;
+}
+
+p {
+  padding: 5
+}
+
+@media (min-width: 992px) {
+}
+
+@media (max-width: 932px) {
+}

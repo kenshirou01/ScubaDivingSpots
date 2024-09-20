@@ -102,7 +102,44 @@ spots = [
   }
 ]
 
-# スポットの作成
 spots.each do |spot|
   Spot.create!(spot)
+end
+
+# Creaturesのデータを作成する
+creatures = [
+  {
+    name: "ハマクマノミ",
+    description: "暖かい海で見ることができ、イソギンチャクに住んでいます。",
+    periods: "通年",
+    photo: File.open(Rails.root.join('public', 'photo', 'default_creature.jpg'))
+  },
+  {
+    name: "アオウミガメ",
+    description: "甲羅の縁が滑らかで、息継ぎの際に海面から顔を出す様子も見られます。",
+    periods: "通年",
+    photo: File.open(Rails.root.join('public', 'photo', 'default_creature.jpg'))
+  },
+  {
+    name: "マンタ",
+    description: "大きな胸ビレを優雅にはばたかせて大海を泳ぐマンタ。マンタは表層や中層を泳ぎ回ってプランクトンを「口を大きく開けて海水ごとプランクトンを取り込み、不要な海水は䚡孔から排出する」。標準和名オニイトマキエイ（学名Mobula birostris）とナンヨウマンタ（学名Mobula alfredi）の2種がいる。",
+    periods: "10月〜3月が旬",
+    photo: File.open(Rails.root.join('public', 'photo', 'default_creature.jpg'))
+  },
+  {
+    name: "サンゴ礁",
+    description: "美しいサンゴ礁が広がるエリア。",
+    periods: "通年",
+    photo: File.open(Rails.root.join('public', 'photo', 'default_creature.jpg'))
+  }
+]
+
+creatures.each do |creature|
+  Creature.create!(creature)
+end
+
+Spot.find_each do |spot|
+  Creature.find_each do |creature|
+    spot.creatures << creature unless spot.creatures.include?(creature)
+  end
 end

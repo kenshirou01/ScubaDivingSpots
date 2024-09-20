@@ -1,5 +1,29 @@
-<h1><%= @spot.name %></h1>
-<p>住所: <%= @spot.address %></p>
-<p>説明: <%= @spot.description %></p>
-<%= image_tag @spot.image.url if @spot.image.present? %>
-<%= link_to 'スポット一覧に戻る', prefecture_spots_path(@spot.prefecture) %>
+<%= stylesheet_link_tag 'views/spots-show', 'media' => 'all', 'data-turbo-track': 'reload' %>
+
+<div class="spot-show-container">
+  <div class="spot-info">
+    <%= image_tag @spot.image.url(:thumb), class: 'spot-image' if @spot.image.present? %>
+    <h1 class="spot-title"><%= @spot.name %></h1>
+    <p>住所: <%= @spot.address %></p>
+    <p>説明: <%= @spot.description %></p>
+    <%= link_to 'スポット一覧に戻る', prefecture_path(@spot.prefecture_id), class: 'back-link' %>
+  </div>
+
+
+  <%
+=begin%>
+ <div class="creatures-section">
+    <h2>このスポットで見られる生き物</h2>
+    <ul class="creatures-list">
+      <% @spot.creatures.each do |creature| %>
+        <li class="creature-item">
+          <%= image_tag creature.photo.url(:thumb), class: 'creature-image' if creature.photo.present? %>
+          <p class="creature-name"><%= creature.name %></p>
+          <p class="creature-description"><%= creature.description %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<%
+=end%>
+</div>
