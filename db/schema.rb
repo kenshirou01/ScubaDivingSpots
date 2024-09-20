@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_13_090202) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_23_084928) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "creatures", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.text "periods"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "creatures_spots", id: false, force: :cascade do |t|
+    t.bigint "spot_id", null: false
+    t.bigint "creature_id", null: false
+    t.index ["creature_id"], name: "index_creatures_spots_on_creature_id"
+    t.index ["spot_id"], name: "index_creatures_spots_on_spot_id"
+  end
 
   create_table "prefectures", force: :cascade do |t|
     t.string "name"
@@ -27,7 +43,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_13_090202) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "prefecture_id"
+    t.bigint "prefecture_id", null: false
     t.index ["prefecture_id"], name: "index_spots_on_prefecture_id"
   end
 

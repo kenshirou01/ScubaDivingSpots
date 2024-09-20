@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   get    "/contact", to: "static_pages#contact"
   get    "/signup",  to: "users#new"
   get    "/login",   to: "sessions#new"
-  get    "search",  to: "static_pages#search"
+  get    "search",   to: "static_pages#search"
+  get    "creature_search",   to: "creatures#search", as: "creature_search"
   post   "/login",   to: "sessions#create"
   delete "/logout",  to: "sessions#destroy"
   resources :users
+  resources :creatures
   resources :prefectures, only: [:show] do
-    resources :spots, only: [:index, :show]
+    resources :spots, only: [:show]
   end
 end

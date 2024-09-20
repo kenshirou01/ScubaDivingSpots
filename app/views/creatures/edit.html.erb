@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'views/creatures-edit', 'media' => 'all', 'data-turbo-track': 'reload' %>
+
+<h1 class="edit-creature-title">編集</h1>
+
+<%= form_with(model: @creature, local: true, class: 'creature-form') do |form| %>
+  <% if @creature.errors.any? %>
+    <div id="error_explanation" class="error-messages">
+      <h2><%= pluralize(@creature.errors.count, "error") %> prohibited this creature from being saved:</h2>
+      <ul>
+        <% @creature.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p>名前</p>
+    <%= form.text_field :name, class: 'form-input' %>
+  </div>
+
+  <div class="field">
+    <p>説明</p>
+    <%= form.text_area :description, class: 'form-textarea' %>
+  </div>
+
+  <div class="field">
+    <p>時期</p>
+    <%= form.text_area :periods, class: 'form-textarea' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo, class: 'form-label' %>
+    <%= form.file_field :photo, class: 'form-input' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Save Creature', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', creatures_path, class: 'btn btn-secondary' %>

@@ -1,7 +1,20 @@
-<h1><%= @prefecture.name %> のスポット一覧</h1>
-<ul>
-  <% @spots.each do |spot| %>
-    <li><%= link_to spot.name, prefecture_spot_path(@prefecture, spot) %></li>
-  <% end %>
-</ul>
+<%= stylesheet_link_tag 'views/prefectures-show', 'media' => 'all', 'data-turbo-track': 'reload' %>
+
+<div>
+  <h1><%= @prefecture.name %> スポット一覧</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <% @spots.each do |spot| %>
+      <div class="col-md-4">
+        <div class="spot-item">
+          <%= image_tag spot.image.url(:thumb), class: 'spot-image' if spot.image.present? %>
+          <h2><%= link_to spot.name, prefecture_spot_path(@prefecture, spot), class: 'spot-link' %></h2>
+          <p>住所: <%= spot.address %></p>
+          <p>説明: <%= spot.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <%= link_to '日本地図', root_path(anchor: 'map') %>

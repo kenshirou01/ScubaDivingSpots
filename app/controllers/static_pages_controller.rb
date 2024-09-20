@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @prefectures = Prefecture.all
+    @creatures = Creature.all
   end
 
   def help
