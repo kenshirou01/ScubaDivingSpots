@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'views/spots-index', 'media' => 'all', 'data-turbo-track': 'reload' %>
+
+<div class="container">
+  <h1>ダイビングスポット一覧</h1>
+  <div class="row">
+    <% @prefectures.each do |prefecture| %>
+      <% if prefecture.spots.any? %>
+        <div class="col-md-12">
+          <h2 class="prefecture-name"><%= prefecture.name %></h2>
+          <div class="row">
+            <% prefecture.spots.each do |spot| %>
+              <div class="col-md-4">
+                <div class="spot-item">
+                  <%= image_tag spot.image.url(:thumb), class: 'spot-image' if spot.image.present? %>
+                  <h3><%= link_to spot.name, prefecture_spot_path(prefecture, spot), class: 'spot-link' %></h3>
+                  <p>住所: <%= spot.address %></p>
+                  <p>説明: <%= spot.description %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

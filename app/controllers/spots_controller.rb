@@ -1,6 +1,10 @@
 class SpotsController < ApplicationController
   before_action :set_spot, only: [:show]
 
+  def index
+    @prefectures = Prefecture.includes(:spots).order(:name)
+  end
+
   def show
     @prefecture = Prefecture.find(params[:prefecture_id])
     @spots = @prefecture.spots
