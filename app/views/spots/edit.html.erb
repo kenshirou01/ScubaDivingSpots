@@ -1,0 +1,24 @@
+<%= form_with(model: @spot, local: true) do |form| %>
+  <div class="spot-form">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+
+    <%= form.label :creatures %>
+    <%= form.collection_check_boxes :creature_ids, @creatures, :id, :name do |b| %>
+      <div>
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+    <% end %>
+
+    <%= form.submit "更新" %>
+  </div>
+<% end %>
+
+<%= link_to '戻る', spot_path(@spot) %>
