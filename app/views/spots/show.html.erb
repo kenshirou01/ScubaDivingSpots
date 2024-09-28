@@ -5,7 +5,15 @@
     <h1 class="spot-title mt-3"><%= @spot.name %></h1>
     <p class="mb-1">住所: <%= @spot.address %></p>
     <p>説明: <%= @spot.description %></p>
-    <%= link_to 'スポット一覧に戻る', prefecture_path(@spot.prefecture_id), class: 'back-link btn btn-primary mt-3' %>
+
+    <div class="spot-actions mt-3">
+      <%= link_to 'スポット一覧に戻る', prefecture_path(@spot.prefecture_id), class: 'back-link btn btn-primary' %>
+
+      <%# 編集リンクはログインユーザーのみに表示されると仮定 %>
+      <% if logged_in? %>
+        <%= link_to 'スポットを編集する', edit_spot_path(@spot), class: 'edit-link btn btn-secondary ml-2' %>
+      <% end %>
+    </div>
   </div>
 
   <div class="creatures-section mt-5">

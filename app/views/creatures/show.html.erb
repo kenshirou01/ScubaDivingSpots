@@ -11,7 +11,9 @@
   </div>
 
   <div class="creature-actions">
-    <%= link_to 'Edit', edit_creature_path(@creature), class: 'btn btn-primary' %>
+    <% if logged_in? %>
+      <%= link_to 'Edit', edit_creature_path(@creature), class: 'btn btn-primary' %>
+    <% end %>
     <%= link_to 'Back', creatures_path, class: 'btn btn-secondary' %>
   </div>
 </div>

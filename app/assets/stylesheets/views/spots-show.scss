@@ -1,10 +1,8 @@
 .spot-show-container {
-  // コンテナの中央揃えとパディング
   margin: 0 auto;
   padding: 20px;
 
   .spot-info {
-    // スポット情報のスタイル
     background-color: #f5f5f5;
     border-radius: 10px;
     padding: 20px;
@@ -12,73 +10,82 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
     .spot-image {
-      width: 100%; // 要素いっぱいに
-      max-width: 600px; // 最大幅を設定
-      height: auto; // 縦横比を維持
-      border-radius: 5px; // 角を丸く
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 5px;
     }
 
     .spot-title {
-      font-size: 2em; // タイトルのフォントサイズ
-      margin-top: 10px; // 上マージン
+      font-size: 2em;
+      margin-top: 10px;
     }
 
-    .back-link {
-      display: inline-block;
-      margin-top: 20px; // 上マージン
-      padding: 10px 15px; // パディング
-      background-color: #5ddde6; // 背景色
-      color: white; // テキスト色
-      text-decoration: none; // 下線を消す
-      border-radius: 5px; // 角を丸く
-      transition: background-color 0.3s ease; // ホバー時の効果
+    .spot-actions {
+      margin-top: 20px;
 
-      &:hover {
-        background-color: #43c0d0; // ホバー時の背景色
+      .back-link, .edit-link {
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #43c0d0;
+        }
+      }
+
+      .edit-link {
+        background-color: #6c757d;
+        color: white;
+
+        &:hover {
+          background-color: #5a6268;
+        }
       }
     }
   }
 
   .creatures-section {
-    margin-top: 50px; // 上マージン
+    margin-top: 50px;
+
     h2 {
-      font-size: 1.8em; // 見出しのフォントサイズ
-      margin-bottom: 20px; // 下マージン
-      text-align: center; // 中央揃え
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
-    .creatures-list {
-      display: flex;
-      flex-wrap: wrap; // 複数行にする
-      gap: 20px; // アイテム間の隙間
-      justify-content: center; // 中央揃え
-      list-style: none; // リストスタイルを消す
+    .row {
+      justify-content: center;
+    }
 
-      .creature-item {
-        text-align: center; // テキストを中央揃え
-        background-color: white; // 背景色
-        border-radius: 10px; // 角を丸く
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // 影
-        padding: 15px; // パディング
-        border: 1px solid #ddd; // ボーダー
+    .creature-item {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      border: 1px solid #ddd;
+      transition: transform 0.3s ease;
 
-        .creature-image {
-          width: 100%; // 横幅を要素いっぱいに
-          height: auto; // 縦横比を維持
-          margin-bottom: 10px; // 下マージン
-          border-radius: 5px; // 角を丸く
-        }
+      &:hover {
+        transform: scale(1.05);
+      }
 
-        .creature-name {
-          font-size: 1.2em; // 名前のフォントサイズ
-          font-weight: bold; // 太字
-          margin-bottom: 5px; // 下マージン
-        }
+      .creature-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
 
-        .creature-description {
-          font-size: 0.9em; // 説明のフォントサイズ
-          color: #666; // 説明の色
-        }
+      h4 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9em;
+        color: #666;
       }
     }
   }

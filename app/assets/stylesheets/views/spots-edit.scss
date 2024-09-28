@@ -1,0 +1,84 @@
+.spot-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .form-group {
+    margin-bottom: 30px;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+  }
+
+  .creatures-select {
+    margin-top: 30px;
+
+    .creatures-checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .creature-checkbox-item {
+        margin-bottom: 20px;
+
+        .creature-info {
+          border: 1px solid #ddd;
+          padding: 15px;
+          border-radius: 5px;
+          background-color: #f9f9f9;
+
+          .creature-image {
+            max-width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+          }
+
+          input[type="checkbox"] {
+            margin-right: 5px;
+          }
+        }
+
+        label {
+          font-size: 0.9em;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .btn {
+    width: 100%; // ボタンを幅いっぱいに
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    text-align: center; // テキストを中央揃え
+
+    &.btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      color: white;
+    }
+
+    &.btn-secondary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+      color: white; // ボタンの文字色を白に
+      margin-top: 20px;
+    }
+  }
+}
