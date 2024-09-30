@@ -65,6 +65,9 @@
       padding: 15px;
       border: 1px solid #ddd;
       transition: transform 0.3s ease;
+      width: 250px;
+      height: 400px;
+      overflow: auto;
 
       &:hover {
         transform: scale(1.05);
