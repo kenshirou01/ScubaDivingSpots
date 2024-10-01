@@ -1,68 +1,77 @@
 .spot-show-container {
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-}
 
-.spot-info {
-  text-align: center;
-  margin-bottom: 40px;
+  .spot-info {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-  .spot-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin-bottom: 20px;
-  }
+    .spot-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 5px;
+    }
 
-  .spot-title {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
+    .spot-title {
+      font-size: 2em;
+      margin-top: 10px;
+    }
 
-  .back-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 15px;
-    background-color: #5ddde6;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    .spot-actions {
+      margin-top: 20px;
 
-    &:hover {
-      background-color: #43c0d0;
+      .back-link, .edit-link {
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #43c0d0;
+        }
+      }
+
+      .edit-link {
+        background-color: #6c757d;
+        color: white;
+
+        &:hover {
+          background-color: #5a6268;
+        }
+      }
     }
   }
-}
 
-.creatures-section {
-  margin-top: 50px;
+  .creatures-section {
+    margin-top: 50px;
 
-  h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-  .creatures-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
+    .row {
+      justify-content: center;
+    }
 
     .creature-item {
-      text-align: center;
-      width: calc(33.333% - 20px);
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       padding: 15px;
       border: 1px solid #ddd;
+      transition: transform 0.3s ease;
+      width: 250px;
+      height: 400px;
+      overflow: auto;
+
+      &:hover {
+        transform: scale(1.05);
+      }
 
       .creature-image {
         width: 100%;
@@ -71,13 +80,13 @@
         border-radius: 5px;
       }
 
-      .creature-name {
+      h4 {
         font-size: 1.2em;
         font-weight: bold;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
       }
 
-      .creature-description {
+      p {
         font-size: 0.9em;
         color: #666;
       }

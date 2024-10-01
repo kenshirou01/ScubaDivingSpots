@@ -12,8 +12,8 @@
       </div>
       <ul id="navbar-menu"
           class="nav navbar-nav navbar-right collapse navbar-collapse">
-        <li><%= link_to "Home",    root_path %></li>
-        <li><%= link_to "Help",    help_path %></li>
+        <li><%= link_to "ダイビングスポット一覧", spots_path %></li>
+        <li><%= link_to "生き物一覧", creatures_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>
           <li class="dropdown">

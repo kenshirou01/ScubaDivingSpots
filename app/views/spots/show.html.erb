@@ -1,29 +1,39 @@
 <%= stylesheet_link_tag 'views/spots-show', 'media' => 'all', 'data-turbo-track': 'reload' %>
-
-<div class="spot-show-container">
-  <div class="spot-info">
-    <%= image_tag @spot.image.url(:thumb), class: 'spot-image' if @spot.image.present? %>
-    <h1 class="spot-title"><%= @spot.name %></h1>
-    <p>住所: <%= @spot.address %></p>
+<div class="spot-show-container container">
+  <div class="spot-info text-center">
+    <%= image_tag @spot.image.url(:thumb), class: 'spot-image img-fluid' if @spot.image.present? %>
+    <h1 class="spot-title mt-3"><%= @spot.name %></h1>
+    <p class="mb-1">住所: <%= @spot.address %></p>
     <p>説明: <%= @spot.description %></p>
-    <%= link_to 'スポット一覧に戻る', prefecture_path(@spot.prefecture_id), class: 'back-link' %>
-  </div>
 
+    <div class="spot-actions mt-3">
+      <%= link_to 'スポット一覧に戻る', prefecture_path(@spot.prefecture_id), class: 'back-link btn btn-primary' %>
 
-  <%
-=begin%>
- <div class="creatures-section">
-    <h2>このスポットで見られる生き物</h2>
-    <ul class="creatures-list">
-      <% @spot.creatures.each do |creature| %>
-        <li class="creature-item">
-          <%= image_tag creature.photo.url(:thumb), class: 'creature-image' if creature.photo.present? %>
-          <p class="creature-name"><%= creature.name %></p>
-          <p class="creature-description"><%= creature.description %></p>
-        </li>
+      <%# 編集リンクはログインユーザーのみに表示されると仮定 %>
+      <% if logged_in? %>
+        <%= link_to 'スポットを編集する', edit_spot_path(@spot), class: 'edit-link btn btn-secondary ml-2' %>
       <% end %>
-    </ul>
+    </div>
   </div>
-<%
-=end%>
+
+  <div class="creatures-section mt-5">
+    <h2 class="text-center">このスポットにいる生き物</h2>
+    <% if @creatures.any? %>
+      <div class="row">
+        <% @creatures.each do |creature| %>
+          <div class="col-md-3 mb-4">
+            <div class="creature-item border p-3 rounded shadow-sm text-center">
+              <h4><%= link_to creature.name, creature %></h4>
+              <% if creature.photo.present? %>
+                <%= image_tag creature.photo.url(:thumb), class: 'creature-image img-fluid mb-2' %>
+              <% end %>
+              <p><%= creature.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-center">このスポットには生き物がいません。</p>
+    <% end %>
+  </div>
 </div>

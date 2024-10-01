@@ -1,0 +1,52 @@
+<%= stylesheet_link_tag 'views/spots-edit', 'media' => 'all', 'data-turbo-track': 'reload' %>
+<%= form_with(model: @spot, local: true) do |form| %>
+  <div class="spot-form">
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-input" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :address %>
+      <%= form.text_field :address, class: "form-input" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-textarea" %>
+    </div>
+
+    <div class="form-group creatures-select">
+      <%= form.label :creatures, "生き物を選択" %>
+      <div class="creatures-checkboxes">
+        <%= form.collection_check_boxes :creature_ids, @creatures, :id, :name do |b| %>
+          <div class="creature-checkbox-item">
+            <div class="creature-info">
+              <% if b.object.photo.present? %>
+                <%= image_tag b.object.photo.url(:thumb), class: "creature-image" %>
+              <% end %>
+              <div>
+                <%= b.check_box %>
+                <%= b.label %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <% if @spot.errors.any? %>
+      <div class="error-messages">
+        <h2>エラー</h2>
+        <ul>
+          <% @spot.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form.submit "更新", class: "btn btn-primary" %>
+    <%= link_to '戻る', spot_path(@spot), class: "btn btn-secondary" %>
+  </div>
+<% end %>

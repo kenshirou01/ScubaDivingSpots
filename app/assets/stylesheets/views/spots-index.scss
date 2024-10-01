@@ -1,0 +1,59 @@
+.spot-item {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.prefecture-name {
+  font-size: 2em;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.spot-index-container {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.prefecture-name {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.spot-image {
+  width: 100%; /* 横幅を要素いっぱいに */
+  height: auto; /* 縦横比を維持 */
+}
+
+.spot-list {
+  list-style: none;
+  padding: 0;
+
+  .spot-item {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    .spot-link {
+      display: block;
+      padding: 10px;
+      background-color: #d5f1f6;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #333;
+
+      &:hover {
+        background-color: #5ddde6;
+      }
+    }
+  }
+}

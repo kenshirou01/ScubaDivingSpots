@@ -1,27 +1,40 @@
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 .creature-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 15px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.creature-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.container {
-  margin-top: 20px;
-}
-
-h3 {
+  transition: transform 0.3s ease;
+  width: 250px;
+  height: 400px;
+  overflow: auto;
   margin-top: 10px;
-  font-size: 1.5rem;
-}
 
-p {
-  font-size: 1rem;
-  color: #555;
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .creature-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  p {
+    font-size: 0.9em;
+    color: #666;
+  }
+
+  .creature-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
 }
