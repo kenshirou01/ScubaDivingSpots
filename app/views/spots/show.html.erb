@@ -1,7 +1,10 @@
 <%= stylesheet_link_tag 'views/spots-show', 'media' => 'all', 'data-turbo-track': 'reload' %>
+
 <div class="spot-show-container container">
   <div class="spot-info text-center">
-    <%= image_tag @spot.image.url(:thumb), class: 'spot-image img-fluid' if @spot.image.present? %>
+    <input id="address" type="textbox" value="<%= @spot.address %>">
+    <div id="map" style="height: 500px; width: 100%;"></div>
+
     <h1 class="spot-title mt-3"><%= @spot.name %></h1>
     <p class="mb-1">住所: <%= @spot.address %></p>
     <p>説明: <%= @spot.description %></p>
@@ -9,7 +12,6 @@
     <div class="spot-actions mt-3">
       <%= link_to 'スポット一覧に戻る', prefecture_path(@spot.prefecture_id), class: 'back-link btn btn-primary' %>
 
-      <%# 編集リンクはログインユーザーのみに表示されると仮定 %>
       <% if logged_in? %>
         <%= link_to 'スポットを編集する', edit_spot_path(@spot), class: 'edit-link btn btn-secondary ml-2' %>
       <% end %>
@@ -37,3 +39,7 @@
     <% end %>
   </div>
 </div>
+<%= javascript_import_module_tag "custom/spots_show" %>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap">
+</script>

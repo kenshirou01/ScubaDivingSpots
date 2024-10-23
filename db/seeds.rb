@@ -73,15 +73,15 @@ end
 
 spots = [
   {
-    name: "オールブルー",
-    address: "沖縄県竹富島1-2-3",
+    name: "ロコモコ",
+    address: "沖縄県石垣市川平",
     description: "世界中の海の生き物がいるダイビングスポットです。",
     image: File.open(Rails.root.join('public', 'images', 'all_blue.jpg')),
     prefecture_id: Prefecture.find_by(name: "沖縄県").id
   },
   {
     name: "ブルーホール",
-    address: "沖縄県石垣市川平",
+    address: "沖縄県石垣市",
     description: "神秘的なブルーホールのダイビングスポット。",
     image: File.open(Rails.root.join('public', 'images', 'blue_hole.jpg')),
     prefecture_id: Prefecture.find_by(name: "沖縄県").id

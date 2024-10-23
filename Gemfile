@@ -5,7 +5,7 @@ ruby "3.3.0"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 
-# Doc:https://rubygems.org/gems/bootstrap-sass
+# https://rubygems.org/gems/bootstrap-sass
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
 # https://rubygems.org/gems/faker
@@ -17,7 +17,7 @@ gem 'mini_magick'
 # https://rubygems.org/gems/carrierwave
 gem 'carrierwave', '~> 3.0', '>= 3.0.7'
 
-# Doc:https://rubygems.org/gems/sassc-rails
+# https://rubygems.org/gems/sassc-rails
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -66,6 +66,9 @@ gem 'will_paginate', "3.3.1"
 gem 'bootstrap-will_paginate', '~> 1.0'
 
 group :development, :test do
+  # https://github.com/bkeepers/dotenv
+  gem 'dotenv-rails', '~> 3.1', '>= 3.1.4'
+
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
 end
