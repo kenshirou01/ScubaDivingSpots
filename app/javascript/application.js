@@ -2,5 +2,6 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "custom/menu"
+import "custom/spots_show"
 import "jquery";
 import "jmap-jquery-plugin";
