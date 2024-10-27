@@ -17,6 +17,10 @@ gem 'mini_magick'
 # https://rubygems.org/gems/carrierwave
 gem 'carrierwave', '~> 3.0', '>= 3.0.7'
 
+gem "aws-sdk-s3", require: false
+
+gem 'fog-aws'
+
 # https://rubygems.org/gems/sassc-rails
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 
