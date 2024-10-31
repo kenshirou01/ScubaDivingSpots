@@ -7,7 +7,7 @@
 
   <section id="map" class="custom-container">
     <h1>日本地図</h1>
-    <div id="jmap" data-controller="home">
+    <div id="jmap" data-controller="home" data-prefectures-with-spots="<%= @prefectures_with_spots.to_json %>">
       <div class="jmap-infobox">
         <h3>ダイビングポイント</h3>
         <p>地図をクリックするとダイビングスポットが表示されます。</p>
