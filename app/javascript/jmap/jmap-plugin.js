@@ -9,7 +9,7 @@
  */
 ;
 (function($) {
-
+    const prefecturesWithSpots = JSON.parse(document.getElementById('jmap').dataset.prefecturesWithSpots);
     // Identifiers
     var identifiers = [];
     var identifier = 0;
@@ -747,7 +747,7 @@
                 'grid-row': '%d1 / %d2'.replace('%d1', pref.cordinate.y).replace('%d2', pref.cordinate.y + pref.size.y),
                 '-ms-grid-row': '%d1'.replace('%d1', pref.cordinate.y),
                 '-ms-grid-row-span': '%d1'.replace('%d1', pref.size.y),
-                'background-color': (option.color) ? option.color : params.prefectureBackgroundColor,
+                'background-color': (option.color && prefecturesWithSpots.includes(option.code)) ? option.color : params.prefectureBackgroundColor,
                 'z-index': pref.cordinate.z
             };
 
