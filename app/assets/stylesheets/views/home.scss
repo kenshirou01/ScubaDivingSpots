@@ -1,40 +1,184 @@
+.center {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .custom-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f5f5f5;;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+  }
+
+  .logo-container {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    .logo-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .logo-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 3em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .search_form {
+    margin-top: 20px;
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+  }
+}
+
+.prefectures-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.prefecture-item {
+  flex: 1 1 calc(16.66% - 10px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.prefecture-link {
+  display: block;
+  padding: 10px;
+  background-color: #d5f1f6;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #5ddde6;
+  }
+}
+
 h3 {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.creature-item {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  border: 1px solid #ddd;
-  transition: transform 0.3s ease;
-  width: 250px;
-  height: 400px;
-  overflow: auto;
-  margin-top: 10px;
+// creature list
 
-  &:hover {
-    transform: scale(1.05);
+.spot-show-container {
+  margin: 0 auto;
+  padding: 20px;
+
+  .creatures-section {
+    margin-top: 50px;
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .row {
+      justify-content: center;
+    }
+
+    .creature-item {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      border: 1px solid #ddd;
+      transition: transform 0.3s ease;
+      width: 250px;
+      height: 400px;
+      overflow: auto;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .creature-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      h4 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9em;
+        color: #666;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (max-width: 932px) {
+  .container {
+    padding: 0;
+
+    .custom-container {
+      padding: 15px;
+    }
   }
 
-  .creature-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
+  .spot-show-container {
+    padding: 0 7px;
+    padding: 0;
   }
 
-  p {
-    font-size: 0.9em;
-    color: #666;
+  .creatures-section .row  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+
+    .creature-item {
+      width: 190px;
+      height: 350px;
+      padding: 10px;
+      margin: 5px 3px;
+    }
   }
 
-  .creature-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+  .creatures-section .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0px;
   }
 }

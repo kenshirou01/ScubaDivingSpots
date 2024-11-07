@@ -1,6 +1,11 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .spot-image {
-  width: 100%; /* 横幅を要素いっぱいに */
-  height: auto; /* 縦横比を維持 */
+  width: 100%;
+  height: auto;
 }
 
 .spot-item {
@@ -9,6 +14,8 @@
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 12px 0 rgba(0, 0, 0, .5);
 }
 
 .spot-link {
@@ -25,12 +32,53 @@
   background-color: #5ddde6;
 }
 
+.spot-description {
+  max-height: 3.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
 p {
-  padding: 5
+  margin: 0;
 }
 
 @media (min-width: 992px) {
+  .spot-item {
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 932px) {
+  .spot-item {
+    height: 350px;
+  }
+
+  .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .spot-item {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+
+  .spot-link {
+    font-size: 16px;
+  }
+
+  .p {
+    margin: 10px;
+  }
 }

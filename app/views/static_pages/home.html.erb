@@ -40,21 +40,20 @@
       <% end %>
     </div>
 
-    <h2>生き物一覧</h2>
-    <div class="container creatures-list">
-      <div class="row">
-        <% @creatures.each_with_index do |creature, index| %>
-          <div class="col-md-4">
-            <div class="creature-item">
-              <%= image_tag creature.photo.url(:thumb), class: 'creature-image' if creature.photo.present? %>
-              <h3><%= link_to creature.name, creature_path(creature), class: "creature-link" %></h3>
-              <p><%= creature.description %></p>
+    <div class="spot-show-container container">
+      <div class="creatures-section mt-5">
+        <h2>生き物一覧</h2>
+        <div class="row">
+          <% @creatures.each_with_index do |creature, index| %>
+            <div class="col-md-4 mb-4">
+              <div class="creature-item border p-3 rounded shadow-sm text-center">
+                <h4><%= link_to creature.name, creature_path(creature) %></h4>
+                <%= image_tag creature.photo.url(:thumb), class: 'creature-image img-fluid mb-2' if creature.photo.present? %>
+                <p><%= creature.description %></p>
+              </div>
             </div>
-          </div>
-          <% if (index + 1) % 3 == 0 %>
-            </div><div class="row">
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </section>

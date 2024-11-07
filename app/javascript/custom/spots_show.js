@@ -1,6 +1,4 @@
 function initMap() {
-  console.log('initMap function is called'); // デバッグ用ログ
-
   var addressElement = document.getElementById('address');
   if (addressElement) {
     var geocoder = new google.maps.Geocoder();
@@ -23,8 +21,6 @@ function initMap() {
     });
   }
 }
-
-// グローバルに定義
 window.initMap = initMap;
 
 document.addEventListener('turbo:load', () => {
