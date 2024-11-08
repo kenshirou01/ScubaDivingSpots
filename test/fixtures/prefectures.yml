@@ -1,7 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  name: MyString
+  id: 1
+  name: "北海道"
 
 two:
-  name: MyString
+  id: 2
+  name: "青森県"

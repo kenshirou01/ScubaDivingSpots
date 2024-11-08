@@ -1,24 +1,24 @@
-<%= stylesheet_link_tag 'views/creatures-search', 'media' => 'all', 'data-turbo-track': 'reload' %>
+<%= stylesheet_link_tag 'views/spots-show', 'media' => 'all', 'data-turbo-track': 'reload' %>
+<% provide(:title, "生き物検索") %>
 
-<h1>検索結果</h1>
-
-<% if @creatures.any? %>
-  <ul>
-    <% @creatures.each do |creature| %>
-      <li>
-        <div class="creature-result-item">
-          <%= image_tag creature.photo.url(:thumb), class: 'creature-image' if creature.photo.present? %>
-
-          <div class="creature-details">
-            <%= link_to creature.name, creature_path(creature), class: 'creature-name' %>
-            <p><%= creature.description %></p>
+<div class="spot-show-container container">
+  <div class="creatures-section mt-5">
+    <h2 class="text-center">生き物検索結果</h2>
+    <% if @creatures.any? %>
+      <div class="row">
+        <% @creatures.each do |creature| %>
+          <div class="col-md-3 mb-4">
+            <div class="creature-item border p-3 rounded shadow-sm text-center">
+              <h4><%= link_to creature.name, creature_path(creature) %></h4>
+              <%= image_tag creature.photo.url(:thumb), class: 'creature-image img-fluid mb-2' if creature.photo.present? %>
+              <p><%= creature.description %></p>
+            </div>
           </div>
-        </div>
-      </li>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-center">該当する生き物が見つかりませんでした。</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>該当する生き物が見つかりませんでした。</p>
-<% end %>
-
-<%= link_to 'Back', creatures_path %>
+  </div>
+</div>
+  <%= link_to 'Back', creatures_path %>

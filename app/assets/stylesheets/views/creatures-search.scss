@@ -1,37 +1,85 @@
-h1 {
-  padding-top: 20px;
+.spot-show-container {
+  margin: 0 auto;
+  padding: 20px;
+
+  .creatures-section {
+    margin-top: 50px;
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .row {
+      justify-content: center;
+    }
+
+    .creature-item {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      border: 1px solid #ddd;
+      transition: transform 0.3s ease;
+      width: 250px;
+      height: 400px;
+      overflow: auto;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .creature-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      h4 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9em;
+        color: #666;
+      }
+    }
+  }
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+@media (min-width: 992px) {
 }
 
-li {
-  margin-bottom: 20px;
-}
+@media (max-width: 932px) {
+  .container {
+    padding: 0 7px;
 
-.creature-result-item {
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.creature-image {
-  width: 200px;
-  height: 200px;
-  margin-right: 20px;
-  border-radius: 5px;
-}
-
-.creature-details {
-  .creature-name {
-    font-size: 18px;
-    font-weight: bold;
+    .spot-show-container {
+      padding: 0;
+    }
   }
 
-  p {
+  .creatures-section .row  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0;
-    color: #555;
+
+    .creature-item {
+      width: 190px;
+      height: 350px;
+      padding: 10px;
+      margin: 5px 3px;
+    }
+  }
+
+  .creatures-section .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0px;
   }
 }

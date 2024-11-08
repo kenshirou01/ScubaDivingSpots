@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'views/prefectures-show', 'media' => 'all', 'data-turbo-track': 'reload' %>
+<% provide(:title, @prefecture.name) %>
 
 <div>
   <h1><%= @prefecture.name %> スポット一覧</h1>
@@ -6,12 +7,12 @@
 <div class="container">
   <div class="row">
     <% @spots.each do |spot| %>
-      <div class="col-md-4">
+      <div class="col-md-4 col-6">
         <div class="spot-item">
           <%= image_tag spot.image.url(:thumb), class: 'spot-image' if spot.image.present? %>
           <h2><%= link_to spot.name, prefecture_spot_path(@prefecture, spot), class: 'spot-link' %></h2>
-          <p>住所: <%= spot.address %></p>
-          <p>説明: <%= spot.description %></p>
+          <p class="spot-description">住所: <%= spot.address %></p>
+          <p class="spot-description">説明: <%= spot.description %></p>
         </div>
       </div>
     <% end %>

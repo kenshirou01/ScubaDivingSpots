@@ -1,13 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  name: MyString
-  address: MyString
-  description: MyText
-  image: MyString
+  name: "Test Spot One"
+  address: "Test Address 1"
+  description: "Test Description 1"
+  prefecture_id: 1
+  image: "photo/default_creature.jpg"
 
 two:
-  name: MyString
-  address: MyString
-  description: MyText
-  image: MyString
+  name: "Test Spot Two"
+  address: "Test Address 2"
+  description: "Test Description 2"
+  prefecture_id: 2
+  image: "photo/default_creature.jpg"

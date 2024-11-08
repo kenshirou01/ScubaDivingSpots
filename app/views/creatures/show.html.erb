@@ -1,4 +1,6 @@
 <%= stylesheet_link_tag 'views/creatures-show', 'media' => 'all', 'data-turbo-track': 'reload' %>
+<% provide(:title, @creature.name) %>
+
 <div class="creature-details-container">
   <h1 class="creature-title"><%= @creature.name %></h1>
 

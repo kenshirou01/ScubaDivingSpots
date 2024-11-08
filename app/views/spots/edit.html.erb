@@ -1,4 +1,6 @@
 <%= stylesheet_link_tag 'views/spots-edit', 'media' => 'all', 'data-turbo-track': 'reload' %>
+<% provide(:title, @spot.name) %>
+
 <%= form_with(model: @spot, local: true) do |form| %>
   <div class="spot-form">
     <div class="form-group">

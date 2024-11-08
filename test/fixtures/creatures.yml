@@ -2,4 +2,4 @@ one:
   name: MyString
   description: MyText
   periods: MyText
-  photo: <%= fixture_file_upload('files/sample.jpg', 'image/jpeg') %>
+  photo: ""

@@ -1,9 +1,13 @@
 <%= stylesheet_link_tag 'views/spots-show', 'media' => 'all', 'data-turbo-track': 'reload' %>
+<% provide(:title, @spot.name) %>
 
 <div class="spot-show-container container">
   <div class="spot-info text-center">
-    <input id="address" type="textbox" value="<%= @spot.address %>">
-    <div id="map" style="height: 500px; width: 100%;"></div>
+    <input id="address" value="<%= @spot.address %>">
+
+    <div class="map-container">
+      <div id="map" style="height: 500px; width: 100%;"></div>
+    </div>
 
     <h1 class="spot-title mt-3"><%= @spot.name %></h1>
     <p class="mb-1">住所: <%= @spot.address %></p>
@@ -26,9 +30,7 @@
           <div class="col-md-3 mb-4">
             <div class="creature-item border p-3 rounded shadow-sm text-center">
               <h4><%= link_to creature.name, creature %></h4>
-              <% if creature.photo.present? %>
-                <%= image_tag creature.photo.url(:thumb), class: 'creature-image img-fluid mb-2' %>
-              <% end %>
+              <%= image_tag creature.photo.url(:thumb), class: 'creature-image img-fluid mb-2' if creature.photo.present? %>
               <p><%= creature.description %></p>
             </div>
           </div>

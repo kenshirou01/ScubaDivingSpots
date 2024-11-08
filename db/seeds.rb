@@ -6,7 +6,7 @@ User.create!(name:  "Example User",
              admin: true)
 
 # 追加のユーザーをまとめて生成する
-99.times do |n|
+10.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@diving.org"
   password = "password"
@@ -73,32 +73,39 @@ end
 
 spots = [
   {
-    name: "ロコモコ",
-    address: "沖縄県石垣市川平",
-    description: "世界中の海の生き物がいるダイビングスポットです。",
-    image: File.open(Rails.root.join('public', 'images', 'all_blue.jpg')),
+    name: "水納島・瀬底島",
+    address: "水納島",
+    description: "沖縄本島北部に位置する水納島・瀬底島エリア。水納島は、なんと言っても本当に透明度が高くてめちゃくちゃ綺麗です。透明度が高い海に真っ白な綺麗な砂地、沖縄本島でも一番綺麗にサンゴが群生していると言われていて、本当に浅瀬は全部ハードコーラルなんじゃないか、と言うくらいたくさんのサンゴが群生しています。",
+    image: File.open(Rails.root.join('public', 'images', 'minnasima.jpg')),
     prefecture_id: Prefecture.find_by(name: "沖縄県").id
   },
   {
-    name: "ブルーホール",
-    address: "沖縄県石垣市",
-    description: "神秘的なブルーホールのダイビングスポット。",
-    image: File.open(Rails.root.join('public', 'images', 'blue_hole.jpg')),
-    prefecture_id: Prefecture.find_by(name: "沖縄県").id
-  },
-  {
-    name: "ホワイトビーチ",
-    address: "千葉県勝浦市",
-    description: "白い砂浜が美しいビーチのダイビングスポット。",
-    image: File.open(Rails.root.join('public', 'images', 'white_beach.jpg')),
-    prefecture_id: Prefecture.find_by(name: "千葉県").id
-  },
-  {
-    name: "マンタポイント",
-    address: "千葉県勝浦市",
-    description: "マンタがよく見られるダイビングスポット。",
+    name: "川平石崎マンタスクランブル",
+    address: "川平石崎マンタスクランブル 沖縄県石垣市",
+    description: "石垣島のマンタスポットといえば、ココ。東西約600m・南北約200mの広いエリアにマンタのクリーニングステーションとなる根がいくつもある。根の上は7～13 mと浅く、根の端でマンタを待つ。特に9～10月頃は繁殖シーズンで、雌を何尾もの雄が追い回すシーンが見られることも!",
     image: File.open(Rails.root.join('public', 'images', 'manta_point.jpg')),
+    prefecture_id: Prefecture.find_by(name: "沖縄県").id
+  },
+  {
+    name: "波左間海中公園",
+    address: "千葉県館山市波左間１０１２",
+    description: "房総半島のほぼ先端、館山市の洲崎（すのさき）灯台のすぐ北の広い湾に位置するのが波左間（はさま）です。巨大なコブダイが長い間生息していて、立派に組まれた魚礁が見事な「ドリーム魚礁」、定置網にかかったマンボウやマンタ、ジンベエザメを一時的に保護している「マンボウランド」などなど、一日じゃ足りないぐらいの見どころが多いです！※マンボウランドには常にマンボウやジンベエがいるわけではありませんので、狙いたい方は《波左間海中公園》情報をチェックしておいてください。",
+    image: File.open(Rails.root.join('public', 'images', 'hazama.jpg')),
     prefecture_id: Prefecture.find_by(name: "千葉県").id
+  },
+  {
+    name: "柏島",
+    address: "〒788-0343 高知県幡多郡大月町柏島",
+    description: "柏島には1,000種以上の魚類が生息しているといわれますが、そのうち日本で初めて確認されたものが約100種いるという、イナズマヒカリイシモチ、イザヨイベンケイハゼ、キツネメネジリンボウなどなど。年間を通してダイビングができるダイビングパラダイス。5月ともなれば水温が平均で23℃近くなり、ベストシーズンの始まりです。7月には平均水温27.3度と南国そのものに。",
+    image: File.open(Rails.root.join('public', 'images', 'kashiwajima.jpg')),
+    prefecture_id: Prefecture.find_by(name: "高知県").id
+  },
+  {
+    name: "積丹",
+    address: "北海道積丹町",
+    description: "日本の渚百選にも選ばれている海岸には、北海道で唯一の海中公園に指定されており、ダイナミックな地形が実に見事。ワイドからマクロまで見どころが豊富で、通年ミズダコを観察するすることができます。 冬の期間限定で、3～4mのジャイアント・オクトパスにも出会えるチャンスも!またトドダイビングができるショップもあります！",
+    image: File.open(Rails.root.join('public', 'images', 'shakotan.jpg')),
+    prefecture_id: Prefecture.find_by(name: "北海道").id
   }
 ]
 
