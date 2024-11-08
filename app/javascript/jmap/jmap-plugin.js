@@ -9,8 +9,10 @@
  */
 ;
 (function($) {
-    const prefecturesWithSpots = JSON.parse(document.getElementById('jmap').dataset.prefecturesWithSpots);
-    // Identifiers
+    const element = document.getElementById('jmap');
+    if (element && element.dataset.prefecturesWithSpots) {
+    const prefecturesWithSpots = JSON.parse(element.dataset.prefecturesWithSpots);
+
     var identifiers = [];
     var identifier = 0;
     var conf = {
@@ -874,4 +876,4 @@
         }
         return this;
     };
-})(jQuery);
+}})(jQuery);

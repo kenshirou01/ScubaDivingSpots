@@ -73,9 +73,6 @@ export default class extends Controller {
         onSelect: function(e, data) {
           // // 都道府県が選択された際にリンクページに遷移する
           window.location.href = 'prefectures/' + data.code;
-        },
-        onHover: function(e, data) {
-          console.log(data);
         }
       });
     });
