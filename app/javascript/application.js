@@ -5,3 +5,4 @@ import "custom/menu"
 import "custom/spots_show"
 import "jquery";
 import "jmap-jquery-plugin";
+import * as Rails from "@rails/ujs";
