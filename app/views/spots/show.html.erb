@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'views/spots-show', 'media' => 'all', 'data-turbo-track': 'reload' %>
+<% provide(:title, @spot.name) %>
 
 <div class="spot-show-container container">
   <div class="spot-info text-center">

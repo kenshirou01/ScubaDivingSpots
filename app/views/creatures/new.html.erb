@@ -1,4 +1,6 @@
 <%= stylesheet_link_tag 'views/creatures-new', 'media' => 'all', 'data-turbo-track': 'reload' %>
+<% provide(:title, "新規作成") %>
+
 <h1>新規作成</h1>
 
 <%= form_with(model: @creature, local: true) do |form| %>
