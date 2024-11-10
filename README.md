@@ -2,9 +2,10 @@
 ![ogp](https://i.gyazo.com/e94f4ebadc882f75c0710a2631652d34.png)
 
 ## ■ アプリURL
-※ログイン用アカウント
-email: example@diving.org
-password: foobaree
+
+* ログイン用アカウント
+    * email: example@diving.org
+    * password: foobaree
 
 https://scubadivingspots.onrender.com
 
