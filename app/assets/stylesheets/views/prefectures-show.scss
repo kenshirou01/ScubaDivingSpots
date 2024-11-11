@@ -3,19 +3,19 @@
   flex-wrap: wrap;
 }
 
-.spot-image {
-  width: 100%;
-  height: auto;
-}
-
 .spot-item {
   padding: 20px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   border-radius: 5px;
-  overflow: hidden;
   box-shadow: 0 5px 12px 0 rgba(0, 0, 0, .5);
+  overflow: auto;
+}
+
+.spot-image {
+  width: 100%;
+  height: auto;
 }
 
 .spot-link {
@@ -32,24 +32,11 @@
   background-color: #5ddde6;
 }
 
-.spot-description {
-  max-height: 3.6em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-}
-
 p {
   margin: 0;
 }
 
 @media (min-width: 992px) {
-  .spot-item {
-    height: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
 }
 
 @media (max-width: 932px) {

@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = t('flash.success.user_updated')
       redirect_to @user
     else
       render 'edit', status: :unprocessable_entity
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = t('flash.success.user_deleted')
     redirect_to users_url, status: :see_other
   end
   private
@@ -54,7 +54,6 @@ class UsersController < ApplicationController
   # beforeフィルタ
 
     # ログイン済みユーザーかどうか確認
-
 
     # 正しいユーザーか確認
     def correct_user
