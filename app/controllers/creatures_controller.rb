@@ -1,5 +1,6 @@
 class CreaturesController < ApplicationController
   before_action :set_creature, only: %i[show edit update destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @creatures = Creature.all
