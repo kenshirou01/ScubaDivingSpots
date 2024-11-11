@@ -116,26 +116,44 @@ end
 # Creaturesのデータを作成する
 creatures = [
   {
-    name: "ハマクマノミ",
-    description: "暖かい海で見ることができ、イソギンチャクに住んでいます。",
+    name: "カクレクマノミ",
+    description: "カクレクマノミ（Amphiprion percula）は、オレンジ色の体に3本の白い帯が特徴で、最も有名なクマノミの一種です。白い帯は頭部、体の中央、尾部に位置しており、黒い縁取りがはっきりと見えます。よくみると、体の形が他のクマノミとは異なっており、綺麗な曲線を描いているのも魅力の一つです。クマノミの見分け方は「1ハマ 2クマ 3カクレ」体にある白い帯の数で見分ける方法です。1本ならハマクマノミ、2本ならクマノミ、3本ならカクレクマノミです。",
     periods: "通年",
-    photo: File.open(Rails.root.join('public', 'photo', 'default_creature.jpg'))
+    photo: File.open(Rails.root.join('public', 'photo', 'kakurekumanomi.jpg'))
   },
   {
     name: "アオウミガメ",
-    description: "甲羅の縁が滑らかで、息継ぎの際に海面から顔を出す様子も見られます。",
+    description: "小さい頭につるっとした甲羅が特徴です。甲長（甲羅の長さ）は大人で80-100cmぐらいです。小笠原諸島が日本最大の繁殖地です。八丈島や屋久島にも産卵にきます。",
     periods: "通年",
-    photo: File.open(Rails.root.join('public', 'photo', 'default_creature.jpg'))
+    photo: File.open(Rails.root.join('public', 'photo', 'aoumigame.jpg'))
   },
   {
-    name: "マンタ",
-    description: "大きな胸ビレを優雅にはばたかせて大海を泳ぐマンタ。マンタは表層や中層を泳ぎ回ってプランクトンを「口を大きく開けて海水ごとプランクトンを取り込み、不要な海水は䚡孔から排出する」。標準和名オニイトマキエイ（学名Mobula birostris）とナンヨウマンタ（学名Mobula alfredi）の2種がいる。",
-    periods: "10月〜3月が旬",
-    photo: File.open(Rails.root.join('public', 'photo', 'default_creature.jpg'))
+    name: "ジョーフィッシュ",
+    description: "ジョーフィッシュは、水深18メートル程度でも見られる魚です。底砂を掘り返して巣穴を作る習性があり、穴掘りをするのが特技です。また子育ては、口内保育で行います。(和名ワニアマダイ)",
+    periods: "暖かい海であれば通年見られます。口内保育は、4月~6月で観察できます。",
+    photo: File.open(Rails.root.join('public', 'photo', 'jyofish.jpg'))
   },
   {
-    name: "サンゴ礁",
-    description: "美しいサンゴ礁が広がるエリア。",
+    name: "ナンヨウマンタ",
+    description: "大きな胸ビレを優雅にはばたかせて大海を泳ぐマンタ。マンタは表層や中層を泳ぎ回ってプランクトンを「口を大きく開けて海水ごとプランクトンを取り込み、不要な海水は䚡孔から排出する」。性格は温厚で、好奇心が強く、警戒心はあまり強くありません。ナンヨウマンタ（学名Mobula alfredi）",
+    periods: "通年見ることができますが、石垣島では特に6月下旬の梅雨明けから10月頃まではマンタのベストシーズンとして、遭遇チャンスが格段に上がりますが、とにかくマンタが見たいなら夏、乱舞が見たいなら春と秋と言われています。",
+    photo: File.open(Rails.root.join('public', 'photo', 'manta.jpg'))
+  },
+  {
+    name: "ナカモトイロワケハゼ",
+    description: "成魚でも全長2～3㎝程の小型のハゼの仲間。砂泥や砂れき底で貝殻や空瓶などをすみかにして、ペアでくらしている。水深35m以深に生息している。",
+    periods: "通年",
+    photo: File.open(Rails.root.join('public', 'photo', 'nakamoto.jpg'))
+  },
+  {
+    name: "オガサワラカムリ",
+    description: "愛称(ユキンコボウシガニ)カニの仲間で全長:5㎜前後。カイメンやホヤ、ソフトコーラルなど被ってるものは様々。写真ではチャツボボヤをかぶっている。",
+    periods: "通年",
+    photo: File.open(Rails.root.join('public', 'photo', 'yukinko.jpg'))
+  },
+  {
+    name: "モンハナシャコ",
+    description: "全体の体色は青緑色から赤茶色で、その他様々な色と模様を所々に組み合わせられ、鮮やか。日本では相模湾以南に分布する。昼行性で浅い海に生息し、サンゴ礁破片に覆われた柔らかい堆積物に巣穴を掘り、細かいサンゴ礁破片で坑道の内壁を補強する。巣穴は単調なU字状坑道、生息水深は3-40m（通常は10-30m）",
     periods: "通年",
     photo: File.open(Rails.root.join('public', 'photo', 'default_creature.jpg'))
   }
