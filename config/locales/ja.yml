@@ -1,0 +1,11 @@
+ja:
+  flash:
+    success:
+      user_updated: "ユーザーが編集されました！"
+      user_deleted: "ユーザーが削除されました"
+      creature_created: "生き物の作成に成功！"
+      creature_updated: "生き物が編集されました！"
+      creature_deleted: "生き物が削除されました！"
+      spot_updated: "スポットが編集されました！"
+    danger:
+      login_required: "ログインをしてください"

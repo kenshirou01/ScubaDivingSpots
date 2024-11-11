@@ -17,7 +17,8 @@ class SpotsController < ApplicationController
 
   def update
     if @spot.update(spot_params)
-      redirect_to @spot, notice: 'スポットが更新されました。'
+      flash[:success] = t('flash.success.spot_updated')
+      redirect_to @spot
     else
       render :edit
     end

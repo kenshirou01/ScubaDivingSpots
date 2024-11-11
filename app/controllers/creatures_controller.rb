@@ -19,7 +19,8 @@ class CreaturesController < ApplicationController
   def create
     @creature = Creature.new(creature_params)
     if @creature.save
-      redirect_to @creature, notice: 'Creature was successfully created.'
+      redirect_to @creature
+      flash[:success] = t('flash.success.creature_created')
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +36,8 @@ class CreaturesController < ApplicationController
 
   def update
     if @creature.update(creature_params)
-      redirect_to @creature, notice: 'Creature was successfully updated.'
+      redirect_to @creature
+      flash[:success] = t('flash.success.creature_updated')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,7 +45,8 @@ class CreaturesController < ApplicationController
 
   def destroy
     @creature.destroy
-    redirect_to creatures_url, notice: 'Creature was successfully destroyed.'
+    redirect_to creatures_url,
+    flash[:success] = t('flash.success.creature_deleted')
   end
 
   private
