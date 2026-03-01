@@ -168,7 +168,7 @@ creatures = [
 ]
 
 creatures.each do |c_data|
-  Creature.find_or_create_by!(name: c_data["name"]) do |c|
+  Creature.find_or_create_by!(name: c_data[:name]) do |c|
     c.description = c_data[:description]
     c.periods = c_data[:periods]
     c.photo = c_data[:photo]
