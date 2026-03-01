@@ -1,9 +1,12 @@
 # メインのサンプルユーザーを1人作成する
-User.create!(name:  "Example User",
-             email: "example@diving.org",
-             password:              "foobaree",
-             password_confirmation: "foobaree",
-             admin: true)
+# 条件を指定して初めの1件を取得し1件もなければ作成
+User.find_or_create_by!(email: "example@diving.org",) do |user|
+  name:  "Example User",
+  email: "example@diving.org",
+  password:              "foobaree",
+  password_confirmation: "foobaree",
+  admin: true
+end
 
 # 追加のユーザーをまとめて生成する
 10.times do |n|
@@ -67,8 +70,8 @@ prefectures = [
 ]
 
 # 都道府県の作成
-prefectures.each do |prefecture|
-  Prefecture.create!(prefecture)
+prefectures.each do |p|
+  Prefecture.find_or_create_by!(name: p[:name])
 end
 
 spots = [
@@ -109,8 +112,13 @@ spots = [
   }
 ]
 
-spots.each do |spot|
-  Spot.create!(spot)
+spots.each do |spot_data|
+  Spot.find_or_create_by!(name: spot_data[:name]) do |s|
+    s.address = spot_data[:address]
+    s.description = spot_data[:description]
+    s.image = spot_data[:image]
+    s.prefecture_id = spot_data[:prefecture_id]
+  end
 end
 
 # Creaturesのデータを作成する
@@ -159,8 +167,12 @@ creatures = [
   }
 ]
 
-creatures.each do |creature|
-  Creature.create!(creature)
+creatures.each do |c_data|
+  Creature.find_or_create_by!(name: c_data["name"]) do |c|
+    c.description = c_data[:description]
+    c.periods = c_data[:periods]
+    c.photo = c_data[:photo]
+  end
 end
 
 Spot.find_each do |spot|
