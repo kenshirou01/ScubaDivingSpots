@@ -1,23 +1,23 @@
 # メインのサンプルユーザーを1人作成する
 # 条件を指定して初めの1件を取得し1件もなければ作成
-User.find_or_create_by!(email: "example@diving.org",) do |user|
-  name:  "Example User",
-  email: "example@diving.org",
-  password:              "foobaree",
-  password_confirmation: "foobaree",
-  admin: true
+User.find_or_create_by!(email: "example@diving.org") do |user|
+  user.name = "Example User"
+  user.password = "foobaree"
+  user.password_confirmation = "foobaree"
+  user.admin = true
 end
 
-# 追加のユーザーをまとめて生成する
+# 追加のユーザーを生成
 10.times do |n|
-  name  = Faker::Name.name
   email = "example-#{n+1}@diving.org"
-  password = "password"
-  User.create!(name:  name,
-               email: email,
-               password:              password,
-               password_confirmation: password)
+  # emailをキーにして検索・作成
+  User.find_or_create_by!(email: email) do |user|
+    user.name = Faker::Name.name
+    user.password = "password"
+    user.password_confirmation = "password"
+  end
 end
+
 
 prefectures = [
   { name: "北海道" },
